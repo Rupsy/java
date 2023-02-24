@@ -1,0 +1,25 @@
+package testingNew;
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+ 
+// Class of ReverseString
+class ReverseString {
+    public static void main(String[] args)
+    {
+        String input = "1212111";
+ 
+        // getBytes() method to convert string
+        // into bytes[].
+        char[] ch = input.toCharArray();
+       String result = "";
+ 
+        // Store result in reverse order into the
+        // result byte[]
+        for (int i = ch.length-1; i >= 0; i--)
+            
+        	result = result + ch[i];
+ 
+        System.out.println(new String(result));
+    }
+}
