@@ -1,0 +1,42 @@
+package testingNew;
+
+public class BinarySearch {
+
+	public static void main(String[] args) {
+
+		int[] arr = { 2, 5, 7, 9, 12, 14, 16, 17, 19, 20, 24, 28 };
+		int item = 6;
+
+		int li = 0;
+		int hi = arr.length - 1;
+		int mi = (li + hi) / 2;
+
+		while (li <= hi) {
+			System.out.println("here :" + li + " " + mi + " " + hi);
+			if (arr[mi] == item) {
+				System.out.println("Item is present at " + mi);
+				break;
+			}
+
+			else if (arr[mi] < item) {
+				System.out.println(" item is greate " + item + arr[mi]);
+
+				li = mi + 1;
+
+			} else
+
+			{
+				System.out.println(" item is less " + item + arr[mi]);
+
+				hi = mi - 1;
+
+				System.out.println(" item is less " + item + arr[mi] + " h" + hi);
+			}
+			mi = (li + hi) / 2;
+			System.out.println("new mi :" + mi);
+
+			if (li > hi)
+				System.out.println("Element not present");
+		}
+	}
+}
