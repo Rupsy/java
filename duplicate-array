@@ -1,4 +1,10 @@
+
 Find the first element which is duplicate.
+Example : array1 -> {1,23,3,33,23}
+answer :- 23
+
+array2 -> {1,23,3,33}
+answer :- none 
 
 
 package testingNew;
@@ -19,7 +25,4 @@ public class DuplicateArray {
 		
 			if (s.add(n) == false )
 			System.out.println(" Repeated number " + n );
-		}
-		
-	}
-}
+		}}}
