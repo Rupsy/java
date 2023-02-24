@@ -1,0 +1,25 @@
+Find the first element which is duplicate.
+
+
+package testingNew;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class DuplicateArray {
+
+	public static void main(String[] args) {
+		
+		int[] arr = {1,23,3,33,23};
+		
+		Set<Integer> s = new HashSet<Integer>();
+		for (int n : arr)
+		{
+			
+		
+			if (s.add(n) == false )
+			System.out.println(" Repeated number " + n );
+		}
+		
+	}
+}
