@@ -1,0 +1,27 @@
+package testingNew;
+
+public class InsertionSort {
+	
+	public static void main(String[] args) {
+		
+		int[] arr= {1,2,3,4,38};
+		int j = 0;
+		int temp ;
+		
+		for ( int i =1 ; i < arr.length ; i ++ )
+		{
+			
+			j = i ; 
+			temp = arr[i];
+			while ( arr[j-1] > temp && j > 0 )
+			{
+				
+				arr[j]= arr[j-1];
+				j = j-1 ;
+			}
+			arr[j] = temp ;
+		}
+		
+}
+
+}
