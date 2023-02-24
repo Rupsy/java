@@ -1,0 +1,71 @@
+Given two arrays, figure out the common element.
+
+package testingNew;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class NoCommonElementsArrays {
+	
+	public static void main(String[] args) {
+		
+		int[] arr1 = { 1, 2, 3, 4 };
+		int[] arr2 ={ 1,5, 6, 7 };
+		
+		Map<Integer , Integer > hm = new HashMap<Integer , Integer > ();
+		
+		int size = Math.min(arr1.length, arr2.length);
+		int c = 0 ;
+		
+		for ( int i = 0 ; i < arr1.length ; i ++ )
+		{
+			
+		 if ( hm.containsKey(arr1[i]))
+				 {
+			        hm.put(arr1[i], hm.get(arr1[i] )+ 1 );
+			        
+			 
+				 }
+		 else 
+			  hm.put(arr1[i], 1);
+			
+		}
+		
+		
+		for ( int i = 0 ; i < arr2.length ; i ++ )
+		{
+		 if ( hm.containsKey(arr2[i]))
+				 {
+		
+			
+			  hm.put(arr2[i], hm.get(arr2[i] ) + 1);
+			 
+				 }
+		 else 
+			  hm.put(arr2[i], 1);
+			
+		}
+		
+		
+		Set<Entry<Integer, Integer>> e = hm.entrySet();
+		
+		int count = 0 ;
+		
+	for ( Entry <Integer , Integer>  in : e)
+	{
+		if ( in.getValue() > 1 ) 
+			count= count+1 ;
+		
+		
+	}
+	System.out.println(count);
+	}
+
+}
+
+
+
