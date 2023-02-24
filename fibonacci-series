@@ -1,0 +1,27 @@
+
+
+package testingNew;
+
+public class Fib {
+
+	static int a = 0;
+
+	static int b = 1, c = 0;
+
+	public static void main(String[] args) {
+
+		fib(20);
+	}
+
+	static void fib(int n) {
+
+		if (n >= 1) {
+			c = a + b;
+			System.out.println(c);
+			a = b;
+			b = c;
+			fib(n - 1);
+		}
+	}
+
+}
