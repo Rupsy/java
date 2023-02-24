@@ -1,0 +1,29 @@
+package testingNew;
+
+public class Factorial {
+	static  int fact =1 ; 
+	public static void main(String[] args) {
+		
+	// int fact = 1;
+	 int factNum = fact( 5);
+	 System.out.println(factNum);
+	 
+	}
+   static int fact( int n )
+   {
+	  
+	   
+	   if ( n == 0 )
+		   return 0 ;
+	  
+	   if ( n >1)
+	   {
+		  //System.out.println(fact);
+		   fact = fact * n;
+		   fact( n-1);
+		   
+	   }
+	   return fact;
+	   
+   }
+}
