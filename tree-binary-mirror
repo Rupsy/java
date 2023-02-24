@@ -1,0 +1,47 @@
+package testingNew;
+
+public class MirrorBinaryTree {
+
+	static BTNode root;
+
+	public static void main(String[] args) {
+		MirrorBinaryTree b = new MirrorBinaryTree();
+		b.root = new BTNode(1);
+		b.root.left = new BTNode(2);
+		b.root.right = new BTNode(3);
+
+		b.root.left.left = new BTNode(4);
+		b.root.left.right = new BTNode(5);
+
+		b.inorder(root);
+
+		b.mirror(root);
+		b.inorder(root);
+
+	}
+
+	void inorder(BTNode b) {
+		if (b == null)
+			return;
+
+		inorder(b.left);
+		System.out.print(b.data);
+
+		inorder(b.right);
+	}
+
+	BTNode mirror(BTNode b) {
+		if (b == null)
+			return b;
+
+		BTNode left = mirror(b.left);
+
+		BTNode right = mirror(b.right);
+
+		b.left = right;
+		b.right = left;
+		return b;
+
+	}
+
+}
