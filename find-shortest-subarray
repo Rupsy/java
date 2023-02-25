@@ -1,0 +1,44 @@
+package array;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class Solution {
+    public static int findShortestSubArray(int[] nums) {
+        // num, index of occurences
+        Map<Integer, List<Integer>> map = new HashMap<>();
+        
+        int n = nums.length;
+        int degree = 0;
+        for(int i = 0; i < n; i++){
+            if(map.containsKey(nums[i])){
+                List<Integer> list = map.get(nums[i]);
+                list.add(i);
+                map.put(nums[i], list);
+            }else{
+                List<Integer> list = new ArrayList<>();
+                list.add(i);
+                map.put(nums[i], list);
+            }
+            
+            degree = Math.max(degree, map.get(nums[i]).size()); 
+        }
+        
+        if(degree == 1) return 1;
+        
+        int res = Integer.MAX_VALUE;
+        for(List<Integer> cur : map.values()){
+            if(cur.size() == degree){
+                res = Math.min(res, cur.get(cur.size() - 1) - cur.get(0) + 1);
+            }
+        }
+        
+        return res;
+    }
+    public static void main(String[] args) {
+    	int[] nums = new int[] { 1,2,3,1};
+    	System.out.println(findShortestSubArray(nums));
+    }
+}
